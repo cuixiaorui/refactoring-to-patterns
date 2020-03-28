@@ -1,21 +1,18 @@
-class DecodingStringNode {
-  private _text: string;
-  private _type: string;
-  constructor(text) {
-    this._type = "decoding";
-    this._text = text;
-  }
-}
+import DecodingStringNode from "./DecodingStringNode";
 
 export default class StringNode {
-  private _text: string;
-  private _type: string;
+  public text: string;
+  public type: string;
   constructor(text) {
-    this._type = "defualt";
-    this._text = text;
+    this.type = "defualt";
+    this.text = text;
   }
 
-  public static createStringNode(text: string, shouldDecode: boolean) {
+  public static createStringNode(
+    text: string,
+    shouldDecode: boolean,
+    shouldRemoveEscapeCharacters: boolean
+  ) {
     if (shouldDecode) {
       return new DecodingStringNode(text);
     }

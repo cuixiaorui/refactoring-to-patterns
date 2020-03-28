@@ -1,5 +1,4 @@
 import Parser from "./Parser";
-import StringNode from "./StringNode";
 export default class StringParser {
   private _parser: Parser;
   constructor(parser) {
@@ -7,10 +6,7 @@ export default class StringParser {
   }
 
   public findString(url) {
-    return StringNode.createStringNode(
-      url,
-      this._parser.shouldDecode(),
-      this._parser.shouldRemoveEscapeCharacters()
-    );
+    const nodeFactory = this._parser.getNodeFactory();
+    return nodeFactory.createStringNode(url);
   }
 }

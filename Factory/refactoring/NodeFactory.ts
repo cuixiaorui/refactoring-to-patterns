@@ -1,11 +1,10 @@
-import StringParser from "./StringParser"
-export default class Parser {
+import DecodingStringNode from "./DecodingStringNode";
+import StringNode from "./StringNode";
+
+export default class NodeFactory {
   private _stringNodeDecoding: boolean;
   private _removeEscapeCharacters: boolean;
-  private _stringParser:StringParser
-  constructor() {
-    this._stringParser = new StringParser(this)
-  }
+
   public shouldDecode() {
     return this._stringNodeDecoding;
   }
@@ -18,7 +17,11 @@ export default class Parser {
   public setRemoveEscapeCharacters(val) {
     this._removeEscapeCharacters = val;
   }
-  public parse(url) {
-    return this._stringParser.findString(url)
+
+  public createStringNode(text: string) {
+    if (this.shouldDecode()) {
+      return new DecodingStringNode(text);
+    }
+    return new StringNode(text);
   }
 }

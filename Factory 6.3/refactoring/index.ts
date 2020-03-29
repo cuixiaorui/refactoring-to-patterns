@@ -4,8 +4,9 @@ import AttributeDescriptor from "./AttributeDescriptor";
 // 客户端代码
 function createAttributeDescriptors() {
   const result = [];
+  result.push(AttributeDescriptor.forUser("count"));
+  result.push(AttributeDescriptor.forDate("time"));
   result.push(AttributeDescriptor.forNumber("remoteId"));
-  result.push(AttributeDescriptor.forNumber("optimisticLockVersion"));
   result.push(AttributeDescriptor.forBoolean("isPass"));
   result.push(AttributeDescriptor.forString("createdBy"));
   return result;

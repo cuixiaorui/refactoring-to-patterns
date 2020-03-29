@@ -1,6 +1,7 @@
 import NumberDescriptor from "./NumberDescriptor";
 import BooleanDescriptor from "./BooleanDescriptor";
 import StringDescriptor from "./StringDescriptor";
+import DefaultDescriptor from "./DefaultDescriptor";
 
 // 所有属性描述符的超类
 export default class AttributeDescriptor {
@@ -21,5 +22,13 @@ export default class AttributeDescriptor {
 
   public static forString(field): AttributeDescriptor {
     return new StringDescriptor(field,"string");
+  }
+
+  public static forUser(field): AttributeDescriptor {
+    return new DefaultDescriptor(field,"user");
+  }
+
+  public static forDate(field): AttributeDescriptor {
+    return new DefaultDescriptor(field,"date");
   }
 }

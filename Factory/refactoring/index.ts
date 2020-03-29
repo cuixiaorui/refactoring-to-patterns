@@ -8,6 +8,6 @@ decodeNodes.setStringNodeDecoding(true)
 
 const parser = new Parser()
 parser.setNodeFactory(decodeNodes)
-const node = parser.parse("cuixiaorui.com")
+const node = parser.parse("cuixiaorui")
 console.log(node.text)
 console.log(node.type)

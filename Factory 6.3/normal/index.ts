@@ -7,7 +7,7 @@ import DefaultDescriptor from "./DefaultDescriptor";
 // 客户端代码
 function createAttributeDescriptors() {
   const result = [];
-  result.push(new DefaultDescriptor("count", "number"));
+  result.push(new DefaultDescriptor("count", "user"));
   result.push(new DefaultDescriptor("time", "Date"));
   result.push(new NumberDescriptor("remoteId", "number"));
   result.push(new BooleanDescriptor("isPass", "boolean"));

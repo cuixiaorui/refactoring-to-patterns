@@ -30,4 +30,5 @@
   - 5. 对所有需要封装的类重构步骤（1）~步骤（4）
 
 - 视频
+
 [重构与模式 - 用 Factory 封装类](https://www.bilibili.com/video/BV197411U7bx/)

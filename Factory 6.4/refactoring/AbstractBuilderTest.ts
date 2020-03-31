@@ -7,7 +7,7 @@ export default abstract class AbstractBuilderTest extends TestCase {
   protected abstract createBuilder(rootName: string): IOutputBuild;
 
   public testAddAboveRoot() {
-    this.createBuilder("orders");
+    this.builder = this.createBuilder("orders");
     this.builder.addBelow("order");
 
     try {

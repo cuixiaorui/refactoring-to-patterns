@@ -39,14 +39,13 @@ export default class TagNode {
   public toString() {
     if (this.isToSingleTag()) {
       return `<${this.tagName}/>`;
-    } else {
-      return `
+    }
+    return `
        <${this.tagName} ${this.getAttributesStr()}>
           ${this.value}
           ${this.getChildrenTagsStr()}  
         </${this.tagName}>
         `;
-    }
   }
 
   private isToSingleTag() {

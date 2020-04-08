@@ -245,3 +245,10 @@
 ### 将创建知识搬移到 Factory
 ### 用 Factory 封装类
 ### 用 Factory Method 引入多态创建
+### 用 Builder 封装 Composite
+### 内联 Singleton 
+
+
+## 简化
+
+### 组合方法 Composed Method 

@@ -1,10 +1,12 @@
+import ConsoleSingleton from "./ConsoleSingleton";
 import HitStayResponse from "./HitStayResponse";
 
 export default class Blackjack {
   private player: any;
   private dealer: any;
-
   private hitStayResponse = new HitStayResponse();
+  constructor(params) {}
+
   public obtainHitStayResponse(input?) {
     this.hitStayResponse.readFrom(input);
     return this.hitStayResponse;
@@ -13,8 +15,6 @@ export default class Blackjack {
   public setPlayerResponse(newHitStayResponse) {
     this.hitStayResponse = newHitStayResponse;
   }
-
-  constructor(params) {}
 
   public play() {
     this.deal();

@@ -16,8 +16,25 @@ class Loan {
   private today: Date;
   private start: Date;
 
-  private readonly MILLIS_PER_DAY:number;
+  private readonly MILLIS_PER_DAY: number;
   private readonly DAYS_PER_YEAR: number;
+
+  private constructor(
+    commitment,
+    outstanding,
+    start,
+    expiry,
+    maturity,
+    riskRating
+  ) {
+    this.commitment = commitment;
+    this.outstanding = outstanding;
+    this.start = start;
+    this.expiry = expiry;
+    this.maturity = maturity;
+    this.riskRating = riskRating;
+  }
+
   public capital() {
     if (this.expiry === null && this.maturity !== null) {
       return this.commitment * this.duration() * this.riskFactor();

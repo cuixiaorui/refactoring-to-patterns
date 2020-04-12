@@ -2,15 +2,22 @@ import RiskFactor from "./RiskFactor";
 import UnusedRiskFactors from "./UnusedRiskFactors";
 
 class Loan {
+  // 承诺金额
   private commitment: any;
+  // 未偿贷款
   private outstanding: any;
+  // 有效日
   private expiry: any;
+  // 到期日
   private maturity: any;
-  private today: any;
-  private start: any;
-  private readonly MILLIS_PER_DAY;
-  private readonly DAYS_PER_YEAR: number;
+  // 风险评级
   private riskRating: any;
+
+  private today: Date;
+  private start: Date;
+
+  private readonly MILLIS_PER_DAY:number;
+  private readonly DAYS_PER_YEAR: number;
   public capital() {
     if (this.expiry === null && this.maturity !== null) {
       return this.commitment * this.duration() * this.riskFactor();
@@ -33,6 +40,9 @@ class Loan {
     }
     return 0;
   }
+  /**
+   * 未用额度
+   */
   getUnusedPercentage() {
     return 1;
   }
@@ -67,9 +77,15 @@ class Loan {
     return 1;
   }
 
+  /**
+   * 未用风险金额
+   */
   private unusedRiskAmount() {
     return this.commitment - this.outstanding;
   }
+  /**
+   * 未清风险金额
+   */
   private outstandingRiskAmount() {
     return this.outstanding;
   }
